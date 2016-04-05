@@ -1,0 +1,31 @@
+<ion-content class="order">	
+	<form [ngFormModel]="orderForm" (ngSubmit)="onSubmit(orderForm.value)">		
+		<div class="categories" *ngIf="data && data.categories">
+			<ion-col width-50 *ngFor="#category of data.categories">
+				<ion-card>
+					<img src="img/{{category.image}}"/>
+					<ion-card-content>
+						<ion-card-title>{{category.name}}</ion-card-title>
+					</ion-card-content>
+				</ion-card>
+			</ion-col>
+		</div>
+		<div class="form-fields">
+			<ion-item [class.error]="!name.valid && name.touched">
+				<ion-label floating>Name</ion-label>
+				<ion-input type="text" value="" [ngFormControl]="name"></ion-input>         
+			</ion-item>
+			<ion-item [class.error]="!email.valid && email.touched">
+				<ion-label floating>Email</ion-label>
+				<ion-input type="text" value="" [ngFormControl]="email"></ion-input>         
+			</ion-item>
+			<ion-item [class.error]="!phone.valid && phone.touched">
+				<ion-label floating>Phone</ion-label>
+				<ion-input type="text" value="" [ngFormControl]="phone" ></ion-input>
+			</ion-item>
+			<div padding>
+				<button type="submit" [disabled]="!orderForm.valid" block>Order</button>
+			</div>
+		</div>
+	</form>
+</ion-content>

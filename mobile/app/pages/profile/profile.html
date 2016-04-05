@@ -1,0 +1,27 @@
+<ion-navbar primary *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Profile</ion-title>
+</ion-navbar>
+
+<ion-content padding class="register">	
+	<form [ngFormModel]="profileForm" (ngSubmit)="onSubmit(profileForm.value)">	
+		<input type="hidden" [ngFormControl]="id" [ngModel]="formData.id" />  
+		<ion-item [class.error]="!name.valid && name.touched">
+			<ion-label floating>Name</ion-label>
+			<ion-input type="text" [ngFormControl]="name" [ngModel]="formData.name"></ion-input>         
+		</ion-item>
+		<ion-item [class.error]="!email.valid && email.touched">
+			<ion-label floating>Email</ion-label>
+			<ion-input type="text" [ngFormControl]="email" [ngModel]="formData.email"></ion-input>         
+		</ion-item>
+		<ion-item [class.error]="!password.valid && password.touched">
+			<ion-label floating>Password</ion-label>
+			<ion-input type="password" [ngFormControl]="password" [ngModel]="formData.password"></ion-input>
+		</ion-item>
+		<div padding>
+			<button type="submit" [disabled]="!profileForm.valid" block>Save</button>
+		</div>
+	</form>
+</ion-content>

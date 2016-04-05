@@ -1,0 +1,13 @@
+<ion-content class="price-list" *ngIf="data && data.prices">
+	<ion-list *ngFor="#category of data.prices | mapToIterable">
+		<ion-list-header>{{category.name}}</ion-list-header>
+		<ion-item *ngFor="#product of category.products">
+			<ion-thumbnail item-left>
+				<img src="img/{{product.image}}">
+			</ion-thumbnail>
+			<h2>{{product.name}}</h2>
+			<p>{{product.price}}</p>
+			<button clear item-right>Rs. {{product.price}}</button>
+		</ion-item>
+	</ion-list>	
+</ion-content>

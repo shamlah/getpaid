@@ -1,0 +1,18 @@
+<ion-menu [content]="content">
+  <ion-content>
+	<ion-col primary class="user-info">
+		<div class="user-img"><img src="img/product.png"></div>
+		<div class="user-name" *ngIf="data && data.session && data.session.customer">{{data.session.customer.name}}</div>
+	</ion-col>
+    <ion-list>
+      <button menuClose ion-item *ngFor="#p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+	  <button menuClose ion-item (click)="logout($event)">logout</button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav id="nav" [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-spinner *ngIf="data && data.isLoading"></ion-spinner>

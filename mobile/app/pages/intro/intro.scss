@@ -1,0 +1,47 @@
+.intro {
+	scroll-content {
+		overflow: hidden;
+	}
+	.slider-container {
+		.swiper-pagination {
+			bottom: 190px;
+		}
+	}
+	.button-container {
+		bottom: 0;
+		position: absolute;
+		width: 100%;
+		z-index: 2;
+		button {
+			font-size: 15px;
+			font-weight: normal;
+			height: 56px;
+			margin: 0;
+			padding: 0;
+			text-align: left;
+			text-transform: none;
+			&[googleplus] {
+				background-color: #4885ed;
+			}
+			&[facebook] {
+				background-color: #217fbc;
+			}
+			.button-inner {
+				justify-content: inherit;
+				ion-icon {
+					height: 100%;
+					line-height: 56px;
+					margin: 0 20px 0 0;
+					text-align: center;
+					width: 56px;
+					&.ion-social-googleplus {
+						background-color: #1D6BB9;
+					}
+					&.ion-social-facebook {
+						background-color: #1c6fa4;
+					}
+				}
+			}
+		}
+	}
+}

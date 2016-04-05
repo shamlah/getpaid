@@ -1,0 +1,22 @@
+.order {
+	scroll-content {
+		padding: 10px;
+	}
+	ion-col {
+		float: left;
+		padding: 10px;
+	}
+	ion-card {
+		margin: 0;
+		ion-card-content {
+			padding: 5px;
+			ion-card-title {
+				font-size: 16px;
+				line-height: normal;
+				padding: 0;
+				text-align: center;
+				text-transform: capitalize;
+			}
+		}
+	}
+}

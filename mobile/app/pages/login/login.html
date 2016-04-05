@@ -1,0 +1,33 @@
+<ion-content padding class="login">
+	<form [ngFormModel]="loginForm" (ngSubmit)="doLogin(loginForm.value)">
+		<ion-item [class.error]="!lemail.valid && lemail.touched">
+			<ion-label floating>Email</ion-label>
+			<ion-input type="text" value="" [ngFormControl]="lemail"></ion-input>         
+		</ion-item>
+		<ion-item [class.error]="!lpassword.valid && lpassword.touched">
+			<ion-label floating>Password</ion-label>
+			<ion-input type="password" value="" [ngFormControl]="lpassword" ></ion-input>
+		</ion-item>
+		<div padding>
+			<button type="submit" [disabled]="!loginForm.valid" block>login</button>
+		</div>
+	</form>
+	
+	<form [ngFormModel]="registerForm" (ngSubmit)="doRegister(registerForm.value)">		
+		<ion-item [class.error]="!name.valid && name.touched">
+			<ion-label floating>Name</ion-label>
+			<ion-input type="text" value="" [ngFormControl]="name"></ion-input>         
+		</ion-item>
+		<ion-item [class.error]="!email.valid && email.touched">
+			<ion-label floating>Email</ion-label>
+			<ion-input type="text" value="" [ngFormControl]="email"></ion-input>         
+		</ion-item>
+		<ion-item [class.error]="!password.valid && password.touched">
+			<ion-label floating>Password</ion-label>
+			<ion-input type="password" value="" [ngFormControl]="password" ></ion-input>
+		</ion-item>
+		<div padding>
+			<button type="submit" [disabled]="!registerForm.valid" block>Register</button>
+		</div>
+	</form>
+</ion-content>

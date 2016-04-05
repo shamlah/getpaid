@@ -1,0 +1,27 @@
+.landing {
+	scroll-content {
+		overflow: hidden;
+	}
+}
+ion-spinner {
+	margin: auto;
+}
+.user-info {
+	background-color: map-get($colors, primary);
+	color: #fff;
+	height: 25%;
+	.user-img {		
+		height: 75%;
+		margin: 10px auto;		
+		text-align: center;
+		img {
+			border-radius: 50%;
+			max-height: 100%;
+		}
+	}
+	.user-name {
+		font-size: 16px;
+		text-align: center;
+		text-transform: capitalize;
+	}
+}
